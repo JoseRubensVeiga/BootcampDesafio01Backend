@@ -28,10 +28,6 @@ app.post("/repositories", (request, response) => {
     });
   }
 
-  if (!techs) {
-    techs = [];
-  }
-
   const newRepository = {
     id: uuid(),
     url,
