@@ -7,7 +7,22 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const repositories = [];
+const repositories = [
+  {
+    id: uuid(),
+    title: "Angular Forms",
+    url: "https://github.com/JoseRubensVeiga/angular_forms",
+    techs: ["JavaScript", "Angular", "TypeScript"],
+    likes: 10,
+  },
+  {
+    id: uuid(),
+    title: "Site Bootstrap com PHP",
+    url: "https://github.com/JoseRubensVeiga/site_bootstrap",
+    techs: ["JavaScript", "HTML", "CSS", "Bootstrap", "PHP"],
+    likes: 12,
+  },
+];
 
 app.get("/repositories", (request, response) => {
   return response.status(200).json(repositories);
