@@ -68,19 +68,12 @@ app.put("/repositories/:id", (request, response) => {
     });
   }
 
-  const repository = repositories[repositoryIndex];
-
-  if (url) {
-    repository.url = url;
-  }
-
-  if (title) {
-    repository.title = title;
-  }
-
-  if (techs) {
-    repository.techs = techs;
-  }
+  repositories[repositoryIndex] = {
+    ...repositories[repositoryIndex],
+    url,
+    title,
+    techs,
+  };
 
   return response.status(200).json(repository);
 });
